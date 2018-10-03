@@ -1,0 +1,309 @@
+<html>
+    <body>
+        <canvas id="canvas" width="800" height="600"></canvas>
+        <script src="./robot-arm.js"></script>
+        <script>
+            // Robotarm bibliotheek inladen
+            var canvas = document.getElementById("canvas");
+            var robotArm = new RobotArm(canvas);
+            
+            // Het level inladen
+            robotArm.loadLevel("exercise 11");
+            
+            // Jou instructies volgen hier
+/*
+            //opdracht 1 
+            robotArm.moveRight();
+            robotArm.grab();
+            robotArm.moveLeft();
+            robotArm.drop();
+
+
+            //opdracht 2
+             robotArm.grab();
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.drop();
+
+            robotArm.moveLeft();
+            robotArm.moveLeft();
+            robotArm.moveLeft();
+            robotArm.moveLeft();
+            robotArm.moveLeft();
+            robotArm.grab();
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.drop();
+
+            robotArm.moveLeft();
+            robotArm.moveLeft();
+            robotArm.grab();
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.drop();
+
+
+            //opdracht 3
+            robotArm.grab();
+            robotArm.moveRight();
+            robotArm.drop();
+            robotArm.moveLeft
+
+            robotArm.grab();
+            robotArm.moveRight();
+            robotArm.drop();
+            robotArm.moveLeft
+
+            robotArm.grab();
+            robotArm.moveRight();
+            robotArm.drop();
+            robotArm.moveLeft
+
+            robotArm.grab();
+            robotArm.moveRight();
+            robotArm.drop();
+
+
+            //opdracht 4
+            robotArm.grab();
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.drop();
+            robotArm.moveLeft();
+            robotArm.moveLeft();
+            robotArm.moveLeft();
+
+            robotArm.grab();
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.drop();
+            robotArm.moveLeft();
+            robotArm.moveLeft();
+
+            robotArm.grab();
+            robotArm.moveRight();
+            robotArm.drop();
+
+            robotArm.moveRight();
+            robotArm.grab();
+            robotArm.moveLeft();
+            robotArm.drop();
+
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.grab();
+            robotArm.moveLeft();
+            robotArm.moveLeft();
+            robotArm.drop();
+            
+
+
+            //opdracht 6
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.moveRight();
+            robotArm.grab();
+            robotArm.moveRight();
+            robotArm.drop();
+
+            robotArm.moveLeft();
+            robotArm.moveLeft();
+            robotArm.grab();
+            robotArm.moveRight();
+            robotArm.drop();
+
+            robotArm.moveLeft();
+            robotArm.moveLeft();
+            robotArm.grab();
+            robotArm.moveRight();
+            robotArm.drop();
+
+            robotArm.moveLeft();
+            robotArm.moveLeft();
+            robotArm.grab();
+            robotArm.moveRight();
+            robotArm.drop();
+
+            robotArm.moveLeft();
+            robotArm.moveLeft();
+            robotArm.grab();
+            robotArm.moveRight();
+            robotArm.drop();
+
+            robotArm.moveLeft();
+            robotArm.moveLeft();
+            robotArm.grab();
+            robotArm.moveRight();
+            robotArm.drop();
+
+            robotArm.moveLeft();
+            robotArm.moveLeft();
+            robotArm.grab();
+            robotArm.moveRight();
+            robotArm.drop();
+
+            robotArm.moveLeft();
+            robotArm.moveLeft();
+            robotArm.grab();
+            robotArm.moveRight();
+            robotArm.drop();
+
+            
+            //opdracht 7
+            for (eerste = 0; eerste <5; eerste++){
+                for (eerst = 0; eerst <6; eerst++){
+                robotArm.moveRight();
+                robotArm.grab();
+                robotArm.moveLeft();
+                robotArm.drop();
+                }
+                robotArm.moveRight();
+                robotArm.moveRight(); 
+            }
+                robotArm.moveLeft();
+                robotArm.moveLeft();
+
+
+            //opdracht 8
+            robotArm.moveRight();
+            robotArm.grab();
+            for (eerste = 0; eerste <7; eerste++){
+                robotArm.grab();
+                for (z = 0; z <8; z++){
+                robotArm.moveRight();   
+                }
+                robotArm.drop();
+                for (q = 0; q <8; q++){
+                robotArm.moveLeft();
+                }
+            }
+
+            //opdracht 9
+            for (h = 0; h <4; h++){
+                for (eerste = 0; eerste <4; eerste++){
+                    robotArm.grab();
+                    for (z = 0; z <5; z++){
+                    robotArm.moveRight();   
+                    }
+                    robotArm.drop();
+                    for (q = 0; q <4; q++){
+                    robotArm.moveLeft();
+                    }
+                }
+                for (t = 0; t <5; t++){
+                    robotArm.moveLeft();
+                }
+            }
+
+            //opdracht 9 2.0
+for(var i = 1 ; i <=4; i++)//gaat een rijtje 5 plaatsen naar rechts (per rij)
+            {
+                for(var j = 0; j < i; j++)//zolang 
+                {
+                    robotArm.grab();//hier pak je telkens een blokje
+                    for(var r= 0; r <5; r++)
+                    {
+                        robotArm.moveRight();//hier ga je 5 naar rechts(met blokje)
+                    }
+                    robotArm.drop();// hier ga je terug
+                    for(var rr= 0; rr <5; rr++)
+                    {
+                        robotArm.moveLeft();
+                    }
+                }
+                robotArm.moveRight();//hier gaat hij naar het volgende rijtje om de loop opnieuw te starten
+            }
+
+            //opdracht 10
+            robotArm.grab();
+            for (z = 0; z <9; z++){
+            robotArm.moveRight(); }
+            robotArm.drop();
+            for (n = 0; n <8; n++){
+            robotArm.moveLeft();}
+            robotArm.grab();
+            for (b = 0; b <7; b++){
+            robotArm.moveRight(); }
+            robotArm.drop();
+            for (c = 0; c <6; c++){
+            robotArm.moveLeft();  }
+            robotArm.grab();
+            for (q = 0; q <5; q++){
+            robotArm.moveRight(); }
+            robotArm.drop();
+             for (v = 0; v <4; v++){
+            robotArm.moveLeft();   }
+            robotArm.grab();
+            for (x = 0; x <3; x++){
+            robotArm.moveRight(); }
+            robotArm.drop();
+             for (k = 0; k <2; k++){
+            robotArm.moveLeft();   }
+            robotArm.grab();
+            for (i = 0; i <1; i++){
+            robotArm.moveRight(); }
+            robotArm.drop();
+
+        //opdracht 10
+var negen = 9
+    for (var o = 0; o <5; o++){
+    robotArm.grab();
+    
+        for (p = 0; p <negen; p++) {
+        robotArm.moveRight();
+        }
+
+        var negen = negen-1
+        robotArm.drop();
+        
+        for(v = 0; v <negen; v++){
+        robotArm.moveLeft();
+        }
+        var negen = negen-1
+    }
+
+
+        //opdracht 11
+        var color
+        
+        for(e = 0; e <9; e++){
+            robotArm.moveRight();
+        }
+        for ( r = 0; r <9; r++){
+            robotArm.grab();
+            color = robotArm.scan();
+            
+        if(color == 'white'){
+            robotArm.moveRight();
+            robotArm.drop();
+            robotArm.moveLeft();
+        }
+        else{
+                robotArm.drop();
+            }
+            robotArm.moveLeft();
+        }
+*/
+
+                 // De door jou opgegeven instructies uitvoeren
+            
+            
+            robotArm.run();
+        </script>
+    </body>
+</html>
